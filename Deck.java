@@ -45,6 +45,7 @@ public class Deck
      */
     public void shuffle() {
         // To be written
+        initializeNewDeck();
     }
     
     /**
@@ -70,7 +71,10 @@ public class Deck
      */
     public Card dealCardFromDeck() {
         // To be written 
-        return null;
+        shuffle();
+        Card dealt = cards.get(0);
+        cards.remove(dealt);
+        return dealt;
     }
     
     /**
