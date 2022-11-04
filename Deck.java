@@ -46,6 +46,14 @@ public class Deck
     public void shuffle() {
         // To be written
         initializeNewDeck();
+        int random = 0;
+        System.out.println(cards);
+        for (int i = 0; i < 52; i++) {
+            random = (int)(Math.random() * 52);
+            cards.set(i, cards.get(random));
+            cards.set(random, cards.get(i));
+        }
+        System.out.println(cards);
     }
     
     /**
