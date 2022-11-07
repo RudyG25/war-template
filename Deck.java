@@ -45,17 +45,22 @@ public class Deck
      */
     public void shuffle() {
         // To be written
-        initializeNewDeck();
+        ArrayList<Integer> test = new ArrayList<Integer>();
+        test.add(1);
+        test.add(2);
+        test.add(3);
+        test.add(4);
+        test.add(5);
         int random = 0;
-        System.out.println(cards);
-        for (int i = 0; i < 52; i++) {
-            random = (int)(Math.random() * 52);
-            cards.set(i, cards.get(random));
-            cards.set(random, cards.get(i));
-        }
-        System.out.println(cards);
+        for (int i = 0; i < 5; i++) {
+            System.out.println(test);
+            random = (int)(Math.random() * 5);
+            test.set(i, test.get(random));
+            test.set(random, test.get(i));
+            System.out.println(test);
     }
-    
+    System.out.println(test);
+}
     /**
      * Deal all the cards in the deck to make two new decks of cards
      * 
@@ -66,11 +71,14 @@ public class Deck
         halves[0] = new Deck();
         halves[1] = new Deck();
         boolean idx = false;
+        shuffle();
+        shuffle();
         while (this.cards.size() > 0) {
             halves[idx ? 0 : 1].addCardToDeck(this.dealCardFromDeck());
             idx = !idx;
         }
-        return halves;
+        System.out.print(halves[0]);
+        return halves;  
     }
     
     /**
@@ -79,7 +87,6 @@ public class Deck
      */
     public Card dealCardFromDeck() {
         // To be written 
-        shuffle();
         Card dealt = cards.get(0);
         cards.remove(dealt);
         return dealt;
