@@ -18,7 +18,7 @@ public class Deck
     {
         cards = new ArrayList<Card>();
     }
-    
+
     public void initializeNewDeck() {
         String[] suits = {"Hearts","Clubs","Spades","Diamonds"};
         int[] ranks = {2,3,4,5,6,7,8,9,10,11,12,13,14};
@@ -39,28 +39,29 @@ public class Deck
     public int getDeckSize() {
         return cards.size();
     }
-    
+
     /**
      * Shuffles the cards in the deck
      */
     public void shuffle() {
         // To be written
-        ArrayList<Integer> test = new ArrayList<Integer>();
-        test.add(1);
-        test.add(2);
-        test.add(3);
-        test.add(4);
-        test.add(5);
         int random = 0;
-        for (int i = 0; i < 5; i++) {
-            System.out.println(test);
-            random = (int)(Math.random() * 5);
-            test.set(i, test.get(random));
-            test.set(random, test.get(i));
-            System.out.println(test);
+        for (int j = 0; j < 200; j++) {
+            for (int i = 0; i < 52; i++) {
+                random = (int)(Math.random() * 52);
+                cards.add(cards.get(i));
+                cards.set(i, cards.get(random));
+                cards.remove(cards.get(random));
+            }
+        }
     }
-    System.out.println(test);
-}
+
+    public void test() {
+        for (int i = 0; i < 200; i++) {
+            shuffle();
+        }
+    }
+
     /**
      * Deal all the cards in the deck to make two new decks of cards
      * 
@@ -80,7 +81,7 @@ public class Deck
         System.out.print(halves[0]);
         return halves;  
     }
-    
+
     /**
      * Deal the top card of the deck and remove it from the deck
      * @returns The top card of the deck (at cards index 0)
@@ -91,7 +92,7 @@ public class Deck
         cards.remove(dealt);
         return dealt;
     }
-    
+
     /**
      * Adds the provided card to the deck
      * @param cardToAdd: Card to add to this deck
@@ -99,5 +100,5 @@ public class Deck
     public void addCardToDeck(Card cardToAdd) {
         // To be written
     }
-    
+
 }
