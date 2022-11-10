@@ -45,8 +45,9 @@ public class Deck
      */
     public void shuffle() {
         // To be written
+        initializeNewDeck();
         int random = 0;
-        for (int j = 0; j < 200; j++) {
+        for (int j = 0; j < 50; j++) {
             for (int i = 0; i < 52; i++) {
                 random = (int)(Math.random() * 52);
                 cards.add(cards.get(i));
@@ -55,13 +56,7 @@ public class Deck
             }
         }
     }
-
-    public void test() {
-        for (int i = 0; i < 200; i++) {
-            shuffle();
-        }
-    }
-
+    
     /**
      * Deal all the cards in the deck to make two new decks of cards
      * 
@@ -87,7 +82,7 @@ public class Deck
      * @returns The top card of the deck (at cards index 0)
      */
     public Card dealCardFromDeck() {
-        // To be written 
+        // To be written
         Card dealt = cards.get(0);
         cards.remove(dealt);
         return dealt;
