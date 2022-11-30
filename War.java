@@ -15,7 +15,12 @@ public class War
     public War()
     {
         // Initializations here...
-    
+        initializeNewDeck();
+        
+        
+        
+        
+        
         
         
         // ...then run the event loop

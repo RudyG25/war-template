@@ -45,7 +45,6 @@ public class Deck
      */
     public void shuffle() {
         // To be written
-        initializeNewDeck();
         int random = 0;
         for (int j = 0; j < 50; j++) {
             for (int i = 0; i < 52; i++) {
@@ -94,6 +93,9 @@ public class Deck
      */
     public void addCardToDeck(Card cardToAdd) {
         // To be written
+        this.cards.add(0, cardToAdd);
+        
+        
     }
 
 }
