@@ -7,6 +7,7 @@
  */
 public class War
 {
+    Deck deck;
     /**
      * Constructor for the game
      * Include your initialization here -- card decks, shuffling, etc
@@ -15,7 +16,8 @@ public class War
     public War()
     {
         // Initializations here...
-        initializeNewDeck();
+        deck = new Deck();
+        deck.initializeNewDeck();
         
         
         
