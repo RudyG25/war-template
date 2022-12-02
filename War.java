@@ -16,8 +16,10 @@ public class War
     public War()
     {
         // Initializations here...
-        deck = new Deck();
+        deck = new Deck();  
         deck.initializeNewDeck();
+        deck.shuffle();
+        System.out.print(deck);
         
         
         
