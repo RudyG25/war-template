@@ -19,7 +19,11 @@ public class War
         deck = new Deck();  
         deck.initializeNewDeck();
         deck.shuffle();
-        System.out.print(deck);
+        Deck[] twoDecks = deck.dealDeck();
+        Deck plA = twoDecks[1];
+        Deck plB = twoDecks[0];
+        
+        
         
         
         
@@ -28,15 +32,15 @@ public class War
         
         
         // ...then run the event loop
-        this.runEventLoop();
+        this.runEventLoop(plA, plB);
     }
     
     /**
      * This is the game's event loop. The code in here should come
      * from the War flowchart you created for this game
      */
-    public void runEventLoop() {
-
+    public void runEventLoop(Deck plA, Deck plB) {
+                
     }
     
     /**
