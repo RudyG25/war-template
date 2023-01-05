@@ -43,6 +43,7 @@ public class War
         Card A;
         Card B;
         System.out.println("War:");
+        System.out.println("");
         int turn = 1;
         while (plA.getDeckSize() > 0 && plA.getDeckSize() > 0 && turn <= 300) {
             Deck storage = new Deck();
@@ -57,6 +58,7 @@ public class War
             B.getSuit());
             turnWinner(plA, plB, A, B, storage);
             turn++;
+            System.out.println("");
         }
         
     }
@@ -78,11 +80,16 @@ public class War
             Card B2 = plB.dealCardFromDeck();
             turnWinner(plA, plB, A2, B2, storage);
         }
+      else if (plA.getDeckSize() > plB.getDeckSize()) {
+          System.out.print("Player A wins!");
+      }
+      else {
+          System.out.print("Player B wins!");
+      }
     }
     public void turnWinner (Deck plA, Deck plB, Card A, Card B, Deck storage) {
         if (A.getRank() == B.getRank()) {
-                war(plA, plB, A, B);
-                
+                war(plA, plB, A, B)
             }
             else if (A.getRank() > B.getRank()) {
                 System.out.println("A's card is higher than B's card, so A wins");
