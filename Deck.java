@@ -73,10 +73,13 @@ public class Deck
      * @returns The top card of the deck (at cards index 0)
      */
     public Card dealCardFromDeck() {
-        // To be written
-        Card dealt = cards.get(0);
-        cards.remove(dealt);
-        return dealt;
+        if (this.getDeckSize() > 0) {
+            Card dealt = new Card(this.cards.get(0).getRank(), this.cards.get(0).getFace(), this.cards.get(0).getSuit());
+            cards.remove(0);
+            return dealt;
+        }
+        return null;
+        
     }
 
     /**
@@ -85,9 +88,7 @@ public class Deck
      */
     public void addCardToDeck(Card cardToAdd) {
         // To be written
-        this.cards.add(0, cardToAdd);
-        
-        
+        cards.add(cardToAdd);
     }
 
 }
